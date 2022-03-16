@@ -1,0 +1,27 @@
+<script>
+function transactionEntry(){
+    //will run function in server side code
+
+
+    var expense = document.getElementById("expense").value;
+    var amount = document.getElementById("amount").value;
+    var category = document.getElementById("category").value;
+    var type = document.getElementById("type").value;
+    //grab username id element and send it to script
+
+    google.script.run.userClicked(expense,amount,category,type);
+   
+     clearInputs(["expense","amount","category","type"])
+}
+  
+  function clearInputs(inputs){
+  inputs.forEach(function(input){
+    var el = document.getElementById(input);
+    el.value = "";
+      });
+}
+
+
+
+
+</script>
